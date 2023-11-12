@@ -31,7 +31,6 @@ stages:
     environment:
       name:  entorno
       resourceType: VirtualMachine
-      tags: web
     strategy:
       runOnce:
         deploy:
