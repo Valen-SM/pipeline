@@ -23,15 +23,14 @@ stages:
         TargetFolder: $(Build.ArtifactStagingDirectory)
     - upload: $(Build.ArtifactStagingDirectory)
       artifact: drop
-- stage: Deploy
-  displayName: VMDeploy stage
+
   jobs:  
   - deployment: VMDeploy
     displayName: Web deploy
     environment:
       name:  entorno
       resourceType: VirtualMachine
-      tags: web
+      tags: web1
     strategy:
       runOnce:
         deploy:
