@@ -30,8 +30,9 @@ stages:
   - deployment: VMDeploy
     displayName: Web deploy
     environment:
-      name: entorno
+      name: prueba
       resourceType: VirtualMachine
+      tags: web
     strategy:
       runOnce:
         deploy:
