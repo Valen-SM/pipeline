@@ -29,9 +29,8 @@ stages:
   - deployment: VMDeploy
     displayName: web
     environment:
-      name: prueba
+      name: <environment name>
       resourceType: VirtualMachine
-      tags: web
     strategy:
         rolling:
           maxParallel: 2  #for percentages, mention as x%
@@ -48,7 +47,7 @@ stages:
                 script: |
                   # Modify deployment script based on the app type
                   echo "Starting deployment script run"
-                  sudo java -jar '$(Pipeline.Workspace)/drop/**/target/*.jar'
+                  sudo java -jar '$(Pipeline.Workspace)/drop/**/*.jar'
           routeTraffic:
             steps:
             - script: echo routing traffic
